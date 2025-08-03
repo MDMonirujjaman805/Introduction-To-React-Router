@@ -1,17 +1,15 @@
-import React from "react";
-
-const Shop = () => {
-  return (
-    <div className="w-8/12 mx-auto bg-gray-100 my-20 shadow-2xl p-5 rounded-2xl">
-      <h1 className="text-3xl font-bold my-3">This is Shop Section.</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias, aut
-        dicta dolor rerum enim sapiente earum inventore, nisi nobis tempora
-        blanditiis repellat. Dolores neque quam quasi expedita corporis dolor
-        laudantium?
-      </p>
-    </div>
-  );
+import { Link } from "react-router-dom";
+const Shop = ({shop}) => {
+    const {title,body,userId}=shop;
+    return (
+        <div className="border p-3 rounded-2xl ">
+            <p><small><strong>User Id: {userId}</strong></small></p>
+            <h3 className="text-xl font-bold line-clamp-1">Title: {title}</h3>
+            <p className="line-clamp-6">Body: {body}</p>
+            <Link to={`/shop/${userId}`} className="text-white py-2 px-6 shadow-2xl border rounded-2xl bg-gray-700 text-center"><button> Shop Details</button>
+            </Link>
+        </div>
+    );
 };
 
 export default Shop;
