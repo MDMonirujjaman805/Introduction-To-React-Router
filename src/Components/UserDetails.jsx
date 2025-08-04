@@ -1,7 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UserDetails = () => {
   const user = useLoaderData();
+  const navigate = useNavigate();
+
+  const handleGoBackButton = () => {
+    navigate(-1);
+  };
 
   const { name, email, address } = user;
   const { street, suite, city, zipcode, geo } = address || {};
@@ -36,6 +41,12 @@ const UserDetails = () => {
       <p>
         <strong>Longitude:</strong> {lng}
       </p>
+      <button
+        className="bg-gray-600 py-2 px-6 rounded-3xl text-white mt-8 cursor-pointer"
+        onClick={handleGoBackButton}
+      >
+        <strong>Go Home</strong>
+      </button>
     </div>
   );
 };

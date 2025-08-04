@@ -4,7 +4,7 @@ import Shop from "./Shop";
 const Shops = () => {
   const shops = useLoaderData();
   return (
-    <div className="w-8/12 mx-auto bg-gray-100 my-20 shadow-2xl p-5 rounded-2xl">
+    <div className="w-10/12 mx-auto bg-gray-100 my-20 shadow-2xl p-5 rounded-2xl">
       <h1 className="text-3xl font-bold my-3 text-center">
         This is Shop Section.
       </h1>
